@@ -10,4 +10,5 @@ ls ./isobuild
 # Set up git user name and tag this commit
 git config --local user.name "philogag"
 git config --local user.email "philogag@qq.com"
+export TRAVIS_TAG=${TRAVIS_TAG:-$(date +%Y-%m-%d_%H-%M)}
 git tag $TRAVIS_TAG
