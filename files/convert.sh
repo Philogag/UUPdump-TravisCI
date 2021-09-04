@@ -619,8 +619,3 @@ errorHandler $? "Failed to create ISO image""$resetColor"
 
 cleanup
 echo -e "\033[1;92mDone.""$resetColor"
-
-ls .
-mkdir ./isobuild
-find . -type f -name "*.iso" ! -path "./isobuild/*" -exec zip -r -0 -s 1g ./isobuild/{}.zip {} \;
-ls ./isobuild
