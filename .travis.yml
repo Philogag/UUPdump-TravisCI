@@ -29,4 +29,4 @@ deploy:
   skip_cleanup: true
   overwrite: true
   on:
-    repo: Philogag/UUPdump-TravisCI
+    branch: release-test
