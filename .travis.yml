@@ -2,7 +2,7 @@ language: bash
 
 before_install:
   - sudo apt-get -y install aria2 cabextract wimtools chntpw genisoimage zip
-  - sudo chmod +x ./test_release.sh
+  - sudo chmod +x ./uup_download_linux.sh ./split_iso.sh
 
 # 构建版本需求
 env: 
@@ -10,10 +10,11 @@ env:
 
 # 运行构建调度脚本
 script:
-  - ./test_release.sh
+  - echo "hello" > a.test.iso
 
 # 上传结果到 github release
 before_deploy:
+  - ./split_iso.sh
   # Set up git user name and tag this commit
   - git config --local user.name "philogag"
   - git config --local user.email "philogag@qq.com"
@@ -26,3 +27,5 @@ deploy:
   file: ./isobuild/*
   skip_cleanup: true
   overwrite: true
+  on:
+    tags: true
