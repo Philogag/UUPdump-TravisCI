@@ -2,7 +2,7 @@ language: bash
 
 before_install:
   - sudo apt-get -y install aria2 cabextract wimtools chntpw genisoimage zip
-  - sudo chmod +x ./uup_download_linux.sh ./split_iso.sh
+  - sudo chmod +x ./uup_download_linux.sh ./before_deploy.sh
 
 # 构建版本需求
 env: 
@@ -14,12 +14,7 @@ script:
 
 # 上传结果到 github release
 before_deploy:
-  - ./split_iso.sh
-  # Set up git user name and tag this commit
-  - git config --local user.name "philogag"
-  - git config --local user.email "philogag@qq.com"
-  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +%Y%m%d)}
-  - git tag $TRAVIS_TAG
+  - ./before_deploy.sh
 
 deploy:
   provider: releases
@@ -28,5 +23,6 @@ deploy:
   file: ./isobuild/*
   skip_cleanup: true
   overwrite: true
+  body: $RELEASE_BODY
   on:
     branch: release-test
