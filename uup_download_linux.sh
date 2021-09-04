@@ -77,6 +77,6 @@ echo ""
 if [ -e ./files/convert.sh ]; then
   chmod +x ./files/convert.sh
   ./files/convert.sh wim "$destDir" 0
-  mkdir ./isobuild
-  mv ./*.iso ./isobuild
+  find . -type f -name "*.iso" ! -path "./isobuild/*" -exec mv {} "./isobuild"
+  ls ./isobuild
 fi
