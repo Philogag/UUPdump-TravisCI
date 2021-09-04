@@ -1,6 +1,7 @@
 language: bash
 
 before_install:
+  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +%Y-%m-%d_%H-%M)}
   - sudo apt-get -y install aria2 cabextract wimtools chntpw genisoimage zip
   - sudo chmod +x ./uup_download_linux.sh ./before_deploy.sh
 
