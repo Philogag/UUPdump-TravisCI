@@ -24,6 +24,3 @@ deploy:
   file: ./isobuild/*
   skip_cleanup: true
   overwrite: true
-  on:
-    tag: true
-    branch: main
