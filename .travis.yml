@@ -1,7 +1,7 @@
 language: bash
 
 before_install:
-  - sudo apt-get -y install aria2c cabextract wimlib-imagex chntpw genisoimage
+  - sudo apt-get -y install aria2 cabextract wimtools chntpw genisoimage
 
 # 构建版本需求
 env: 
@@ -9,7 +9,7 @@ env:
 
 # 运行构建调度脚本
 script:
-  - ./tools/run-in-woker.sh
+  - ./uup_download_linux.sh
 
 # 上传结果到 github release
 before_deploy:
