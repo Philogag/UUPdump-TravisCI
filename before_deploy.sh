@@ -12,7 +12,3 @@ git config --local user.name "philogag"
 git config --local user.email "philogag@qq.com"
 export TRAVIS_TAG=${TRAVIS_TAG:-$(date +%Y%m%d)}
 git tag $TRAVIS_TAG
-
-# # Create Release Body
-# python3 ./create_release_body.py
-# export RELEASE_BODY="$(cat body.md)"

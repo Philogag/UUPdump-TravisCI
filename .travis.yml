@@ -24,4 +24,4 @@ deploy:
   skip_cleanup: true
   overwrite: true
   on:
-    branch: release-test
+    branch: main
