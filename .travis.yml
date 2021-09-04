@@ -2,6 +2,7 @@ language: bash
 
 before_install:
   - sudo apt-get -y install aria2 cabextract wimtools chntpw genisoimage
+  - sudo chmod +x ./uup_download_linux.sh
 
 # 构建版本需求
 env: 
