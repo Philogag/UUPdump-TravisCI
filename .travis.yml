@@ -23,6 +23,5 @@ deploy:
   file: ./isobuild/*
   skip_cleanup: true
   overwrite: true
-  body: $RELEASE_BODY
   on:
     branch: release-test
