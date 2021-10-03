@@ -6,7 +6,7 @@ before_install:
 
 # 构建版本需求
 env: 
-  - BUILD=8457f286-999e-455e-a887-723e5fb24a7e LANG=zh-cn EDITION=PROFESSIONAL
+  - BUILD=40247218-1c93-41ca-8470-bda1cc93d7b9 LANG=zh-cn EDITION=PROFESSIONAL
 
 # 运行构建调度脚本
 script:
